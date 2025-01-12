@@ -1,0 +1,357 @@
+/*CSS Reset*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+ol,
+li,
+small,
+main,
+header,
+footer,
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: #081c46;
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+
+img {
+  border-radius: 4vw;
+}
+
+p,
+a,
+ol,
+ul,
+li,
+main,
+header,
+footer {
+  font-family: "PT Serif", sans-serif;
+  color: #fff;
+}
+
+img {
+  border-radius: 4vw;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+/*Nav Style Rules*/
+.nav ul li {
+  width: 49%;
+  float: left;
+  list-style: none;
+  font-size: 1.75em;
+  font-family: "League Gothic", serif;
+  padding-top: 10px;
+  border-radius: 15px;
+}
+
+.nav {
+  padding-left: 1%;
+}
+
+.nav ul li a {
+  text-align: center;
+  padding: 10px 0;
+  display: block;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background: #6F7D8C;
+  font-family: "Oswald", serif;
+}
+
+.nav ul li a,
+.nav ul li a:focus,
+.nav ul li a:visited {
+  color: #fff;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.nav ul li a:hover,
+.nav ul li a:active {
+  font-weight: bold;
+  text-decoration: none;
+  font-style: none;
+}
+
+.nav ul li:first-child a {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.nav ul li:last-child a {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/*Search Bar Format*/
+/*Search Bar Format*/
+.content #search {
+  width: 300%;
+  /* Make it take the full width of the parent */
+  max-width: 80vw;
+  /* Limit the maximum width to ensure it doesn't overflow */
+  padding: 5%;
+  /* Add padding around it */
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  /* Center the container horizontally */
+}
+
+.content #search form {
+  width: 100%;
+  max-width: 1000px;
+  /* Set a reasonable maximum width for the form */
+  background: #77A0A9;
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+}
+
+.content #search form input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 1.5rem;
+  /* Fix the font size */
+  color: #fff;
+  font-family: "PT Serif", serif;
+}
+
+/*Button*/
+
+button {
+  color: #fff;
+  background-color: transparent;
+  border-color: #081c46;
+  border-radius: 8px;
+  font-size: 1.25em;
+}
+
+button:hover {
+  color: #fff;
+  border-color: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #fff;
+  font-size: 1.25em;
+}
+
+/*Content*/
+
+.content p {
+  font-style: italic;
+  font-family: "PT Serif", sans-serif;
+  text-align: center;
+  padding: 0;
+}
+
+/*Style for Manga Covers*/
+.manga {
+  align-items: center;
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 1%;
+  flex-direction: row;
+}
+
+.manga img {
+  width: 100%;
+  height: auto;
+  border-radius: 4vw;
+}
+
+.manga .cover {
+  padding-left: 1%;
+  padding-top: 5%;
+  width: 17.5vw;
+  border: 10px solid transparent;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.manga p {
+  width: 100;
+}
+
+.tranistion {
+  transition: .5s ease;
+  opacity: 0;
+  top: 50%;
+  text-align: center;
+  /*left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%); */
+}
+
+
+.SpecCover:hover .cover {
+  opacity: 0.3;
+}
+
+.SpecCover {
+  position: relative;
+  width: 50%;
+}
+
+.SpecCover:hover .tranistion {
+  opacity: 1;
+}
+
+.manga .textForCover {
+  width: 100%;
+  column-span: all;
+}
+
+.textForCover h3 {
+  font-size: 1.5vw;
+  background: transparent;
+
+  display: -webkit-box;
+  /* Needed for line clamping */
+  -webkit-box-orient: vertical;
+  /* Specifies vertical stacking of lines */
+  -webkit-line-clamp: 1;
+  /* Number of lines to show before truncating */
+  overflow: hidden;
+  /* Hides the overflowed content */
+  text-overflow: ellipsis;
+  /* Adds ellipsis at the point of truncation */
+  word-wrap: break-word;
+  /* Ensures long words will wrap correctly */
+}
+
+.textForCover p {
+  font-size: 1vw;
+  width: 100%;
+  background: transparent;
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  padding-top: 30%;
+  text-align: center;
+
+
+  display: -webkit-box;
+  /* Needed for line clamping */
+  -webkit-box-orient: vertical;
+  /* Specifies vertical stacking of lines */
+  -webkit-line-clamp: 6;
+  /* Number of lines to show before truncating */
+  overflow: hidden;
+  /* Hides the overflowed content */
+  text-overflow: ellipsis;
+  /* Adds ellipsis at the point of truncation */
+  word-wrap: break-word;
+  /* Ensures long words will wrap correctly */
+
+
+}
+
+.textForCover {
+  max-width: fit-content;
+  margin-inline: auto;
+}
+
+/*Indvidual Section Styles*/
+
+.mainManga {
+  display: inline-flex;
+}
+
+.mainManga .cover {
+  padding-left: 1%;
+  padding-top: 2%;
+  padding-right: 1%;
+  min-width: 30%;
+  float: left;
+}
+
+.mainManga #img {
+  object-fit: fill;
+  border-radius: 4vw;
+}
+
+.mainManga h3 {
+  text-align: center;
+  font-size: 5vw;
+  padding-top: 8%;
+}
+
+.mainManga p {
+  padding-top: 1%;
+  padding-left: 1%;
+  font-size: 1.5vw;
+}
+
+.mainManga .MangaText {
+  padding-top: 10%;
+  float: left;
+  padding-right: 1%;
+}
+
+.dont-show {
+  display: none;
+}
+
+/*Hero Img*/
+
+#hero {
+  padding-top: 5%;
+  font-size: 5vw;
+  text-align: center;
+}
+
+#hero #lineNi {
+  font-size: 2vw;
+}
+
+#bottom-text {
+  font-size: 1.5vw;
+}
+
+#rec {
+  font-size: 3.5vw;
+  padding-left: 1.5%;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Search Results - Manga Recommender</title>
+    <link rel="shortcut icon" type="image/x-icon" href="icon.png" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Oswald:wght@200..700&family=ZCOOL+KuaiLe&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=ZCOOL+KuaiLe&display=swap"
+        rel="stylesheet">
+
+
+    <script type="text/javascript" src="scripts.js"></script>
+
+    <script>
+        function searchQuery(userInput) {
+            //alert(userInput);
+            getIDsFromSearch(userInput).then(function (ids) {
+                ids.forEach(function (id, index) {
+                    setTimeout(function () {
+                        document.getElementById('id' + (index + 1)).innerHTML = id;
+                        document.getElementById('id' + (index + 1)).style.display = "none";
+                        getInfoFromID(id).then(function (info) {
+                            document.getElementById('title' + (index + 1)).innerHTML = info[0];
+                            document.getElementById('desc' + (index + 1)).innerHTML = info[1];
+                            document.getElementById('img' + (index + 1)).src = info[2];
+                        });
+                    }, 700 * index);
+                });
+            });
+        }
+    </script>
+
+    <script>
+        function handleClick(event, id) {
+            event.preventDefault();
+
+            localStorage.setItem('id', document.getElementById(id).innerHTML);
+
+            window.location.href = 'indvidual.html'; // This will navigate to the individual page
+        }
+    </script>
+
+    <script>
+        function handleRandom(event) {
+            event.preventDefault();
+            localStorage.setItem('id', getRandomID());
+            window.location.href = 'indvidual.html';
+        }
+    </script>
+</head>
+
+<main>
+
+    <body onload="searchQuery(localStorage.getItem('search'))">
+        <div class="nav">
+            <ul>
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="random.html" onclick="handleRandom(event)">Random</a></li>
+            </ul>
+        </div>
+
+        <div class="manga">
+
+            <div class="SpecCover">
+                <a href="indvidual.html" onclick="handleClick(event, 'id1');"><img id="img1" class="cover"
+                        src="cover.png">
+                    <div class="tranistion">
+                        <div class="textForCover">
+                            <h3 id="title1">Manga Failed to Load</h3>
+                            <p id="desc1">This Manga failed to load. Maybe the real manga was the friends we made along
+                                the way...?</p>
+                            <p class="dont-show" id="id1">a</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+            <div class="SpecCover">
+                <a href="indvidual.html" onclick="handleClick(event, 'id2');"><img id="img2" class="cover"
+                        src="cover.png">
+                    <div class="tranistion">
+                        <div class="textForCover">
+                            <h3 id="title2">Manga Failed to Load</h3>
+                            <p id="desc2">This Manga failed to load. Maybe the real manga was the friends we made along
+                                the way...?</p>
+                            <p class="dont-show" id="id2">a</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="SpecCover">
+                <a href="indvidual.html" onclick="handleClick(event, 'id3');"><img id="img3" class="cover"
+                        src="cover.png">
+                    <div class="tranistion">
+                        <div class="textForCover">
+                            <h3 id="title3">Manga Failed to Load</h3>
+                            <p id="desc3">This Manga failed to load. Maybe the real manga was the friends we made along
+                                the way...?</p>
+                            <p class="dont-show" id="id3">a</p>
+                        </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="SpecCover">
+            <a href="indvidual.html" onclick="handleClick(event, 'id4');"><img id="img4" class="cover" src="cover.png">
+                <div class="tranistion">
+                    <div class="textForCover">
+                        <h3 id="title4">Manga Failed to Load</h3>
+                        <p id="desc4">This Manga failed to load. Maybe the real manga was the friends we made along the
+                            way...?</p>
+                        <p class="dont-show" id="id4">a</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="SpecCover">
+            <a href="indvidual.html" onclick="handleClick(event, 'id5');"><img id="img5" class="cover" src="cover.png">
+                <div class="tranistion">
+                    <div class="textForCover">
+                        <h3 id="title5">Manga Failed to Load</h3>
+                        <p id="desc5">This Manga failed to load. Maybe the real manga was the friends we made along the
+                            way...?</p>
+                        <p class="dont-show" id="id5">a</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        </div>
+    </body>
+</main>
+
+<footer>
+
+</footer>
+
+</html>

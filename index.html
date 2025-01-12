@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>TITLE</title>
-        <link rel="stylesheet" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>Home - Manga Recommender</title>
+  <link rel="shortcut icon" type="image/x-icon" href="icon.png" />
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Oswald:wght@200..700&family=ZCOOL+KuaiLe&display=swap"
+    rel="stylesheet">
 
-        <script type="text/javascript" src="scripts.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Oswald:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=ZCOOL+KuaiLe&display=swap"
+    rel="stylesheet">
 
-        <script>
-            function handleRandom(event) {
-                event.preventDefault();
-                    localStorage.setItem('id', getRandomID());
-                    window.location.href = 'indvidual.html';
-                }
-        </script>
+  <script type="text/javascript" src="scripts.js"></script>
 
-        <script>
-            function handleEvent(event)
-            {
-                event.preventDefault();
-                searchQuery = document.getElementById('searchbar').value;
-                localStorage.setItem('search', searchQuery);
-                window.location.href = 'searchResults.html';
-            }
-        </script>
-    </head>
- 
-    
-    <main>
-        <body>
-            <div class= "nav">
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href = "random.html" onclick="handleRandom(event)">Random</a></li>
-                </ul>
-            </div>
+  <script>
+    function handleRandom(event) {
+      event.preventDefault();
+      localStorage.setItem('id', getRandomID());
+      window.location.href = 'indvidual.html';
+    }
+  </script>
 
-            <div id="hero">
-                <h2>Find new Manga based on what YOU like!</h2>
-                <h2 id="lineNi">Simply type the name of a Manga you like and hit Enter!</h2>
-            </div>
+  <script>
+    function handleEvent(event) {
+      event.preventDefault();
+      searchQuery = document.getElementById('searchbar').value;
+      localStorage.setItem('search', searchQuery);
+      window.location.href = 'searchResults.html';
+    }
+  </script>
+</head>
 
-            <div class="content">
-                <br>
-                <div id="search">
-                    <form onsubmit="handleEvent(event)">
-                        <input id="searchbar" type="search" placeholder="Search Manga..." required>
-                        <button type="submit">Search</button> 
-                    </form>
-                </div>
 
-                <p>Don't have a specific manga in mind? Find a random one with the random finder!</p>
+<main>
 
-            </div>
-        </body>
-    </main>
-       
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="random.html" onclick="handleRandom(event)">Random</a></li>
+      </ul>
+    </div>
 
-    <footer>
 
-    </footer>
+
+    <div class="content">
+      <br>
+      <div id="hero">
+        <h2>Find new Manga based on what YOU like!</h2>
+        <h2 id="lineNi">Simply type the name of a Manga you like and hit Enter!</h2>
+      </div>
+      <div id="search">
+        <form onsubmit="handleEvent(event)">
+          <input id="searchbar" type="search" placeholder="Search Manga..." required">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <p id="bottom-text" onclick="handleRandom(event)">Don't have a specific manga in mind? Find a random one with the
+        random finder, or click here!</p>
+
+    </div>
+  </body>
+</main>
+
+
+<footer>
+
+</footer>
+
 </html>
